@@ -36,3 +36,9 @@ struct Rating: Codable {
         count = try? container.decodeIfPresent(Int.self, forKey: .count)
      }
 }
+
+enum CustomError: Error {
+    case NoData
+    case ResponseError
+    case ParsingError
+}

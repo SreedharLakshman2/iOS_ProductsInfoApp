@@ -10,12 +10,28 @@ import UIKit
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        filteredProductIfoCollection?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath)
-        return cell
+        let productCell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath) as! ProductTableViewCell
+        if let productDetails = filteredProductIfoCollection?[indexPath.row] {
+            productCell.categoryInfoLabel.text = "Category: \(productDetails.category ?? "")"
+            productCell.titleLabel.text = "Title: \(productDetails.title ?? "")"
+            DispatchQueue.main.async {
+            productCell.productImageView.downloadedFrom(link: productDetails.image ?? "")
+            }
+            productCell.ratingInfoLabel.text = "\(productDetails.rating?.rate ?? 0)/5.0"
+            // Converting Doller to rupees value
+            let rateInRupees = ((productDetails.price ?? 0.0)*80.0)
+            productCell.priceInfoLabel.text = "Rs: \(rateInRupees)"
+        }
+        return productCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
+        present(detailVC, animated: true, completion: nil)
     }
     
     

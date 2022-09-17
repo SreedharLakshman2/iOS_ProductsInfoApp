@@ -21,6 +21,7 @@
 		9F7ED6AC28D5B60100C18321 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7ED6AA28D5B60100C18321 /* ProductTableViewCell.swift */; };
 		9F7ED6AD28D5B60100C18321 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F7ED6AB28D5B60100C18321 /* ProductTableViewCell.xib */; };
 		9F7ED6B328D5BC8500C18321 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7ED6B228D5BC8500C18321 /* Products.swift */; };
+		9F7ED6B528D5FBA100C18321 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7ED6B428D5FBA000C18321 /* ProductDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		9F7ED6AA28D5B60100C18321 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		9F7ED6AB28D5B60100C18321 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		9F7ED6B228D5BC8500C18321 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		9F7ED6B428D5FBA000C18321 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				9F7ED67928D5B18100C18321 /* ViewController.swift */,
+				9F7ED6B428D5FBA000C18321 /* ProductDetailsViewController.swift */,
 			);
 			path = ProductsListViewController;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				9F7ED6A928D5B5A400C18321 /* ProductsListViewControllerEXtension.swift in Sources */,
 				9F7ED67828D5B18100C18321 /* SceneDelegate.swift in Sources */,
 				9F7ED6AC28D5B60100C18321 /* ProductTableViewCell.swift in Sources */,
+				9F7ED6B528D5FBA100C18321 /* ProductDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
