@@ -31,6 +31,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
+        if let productDetails = filteredProductIfoCollection?[indexPath.row] {
+        detailVC.selectedProductDetails = productDetails
+        }
         present(detailVC, animated: true, completion: nil)
     }
     
@@ -58,4 +61,11 @@ extension UIImageView {
         downloadedFrom(url: url, contentMode: mode)
     }
     
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
+    }
 }

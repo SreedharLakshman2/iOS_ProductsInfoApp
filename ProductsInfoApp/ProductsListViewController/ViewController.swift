@@ -11,9 +11,10 @@ class ViewController: UIViewController {
     
     //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchTextField: UITextField!
     
     //MARK: - Properties declaration
-    var productIfoCollection: [ProductInfo]? = []
+    var allProductIfoCollection: [ProductInfo]? = []
     var filteredProductIfoCollection: [ProductInfo]? = []
     
     override func viewDidLoad() {
@@ -25,8 +26,8 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
-                    self?.productIfoCollection = data
-                    if let productDetails = self?.productIfoCollection {
+                    self?.allProductIfoCollection = data
+                    if let productDetails = self?.allProductIfoCollection {
                     self?.filteredProductIfoCollection = productDetails
                     }
                     self?.tableView.reloadData()
@@ -44,6 +45,8 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         let nib = UINib(nibName: "ProductTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "ProductTableViewCell")
+        searchTextField.delegate = self
+        searchTextField.clearButtonMode = .whileEditing
     }
     
     func getListOfProductsInfo(onCompletion: @escaping (Result<[ProductInfo],CustomError>) -> ()) {
@@ -69,5 +72,25 @@ class ViewController: UIViewController {
             }
         }
         task.resume()
+    }
+
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if textField == searchTextField {
+            print(textField.text ?? "")
+                if textField.text != "" {
+                    let filterArray = self.allProductIfoCollection?.filter({(($0.title ?? "").localizedCaseInsensitiveContains(textField.text ?? ""))})
+                     filteredProductIfoCollection = filterArray
+                    tableView.reloadData()
+                }
+                else {
+                    filteredProductIfoCollection?.removeAll()
+                    filteredProductIfoCollection = allProductIfoCollection
+                    tableView.reloadData()
+                }
+        }
+        else {
+            return
+        }
     }
 }
