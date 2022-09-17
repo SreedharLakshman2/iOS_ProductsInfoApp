@@ -19,6 +19,17 @@ struct ProductInfo: Codable {
     enum CodingKeys: String, CodingKey {
         case id,title,price,description,category,image,rating
     }
+    
+    init(from decoder: Decoder) throws {
+        let container = try! decoder.container(keyedBy: CodingKeys.self)
+        id = try? container.decodeIfPresent(Int.self, forKey: .id)
+        title = try? container.decodeIfPresent(String.self, forKey: .title)
+        price = try? container.decodeIfPresent(Float.self, forKey: .price)
+        description = try? container.decodeIfPresent(String.self, forKey: .description)
+        category = try? container.decodeIfPresent(String.self, forKey: .category)
+        image = try? container.decodeIfPresent(String.self, forKey: .image)
+        rating = try? container.decodeIfPresent(Rating.self, forKey: .rating)
+     }
 }
 
 struct Rating: Codable {
