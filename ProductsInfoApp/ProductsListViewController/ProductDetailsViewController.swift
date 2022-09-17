@@ -29,9 +29,9 @@ class ProductDetailsViewController: UIViewController {
     
     func showProductDetails() {
         productImageView.downloadedFrom(link: selectedProductDetails?.image ?? "")
-        titleInfoLabel.text = "Title:  \(selectedProductDetails?.title ?? "")"
+        titleInfoLabel.text = "Title:  \n\(selectedProductDetails?.title ?? "")"
         categoryInfoLabel.text = "Category: \(selectedProductDetails?.category ?? "")"
-        descriptionInfoLabel.text = "Description:  \(selectedProductDetails?.description ?? "")"
+        descriptionInfoLabel.text = "Description:  \n\(selectedProductDetails?.description ?? "")"
         ratingInfoLabel.text = "Rating: \(selectedProductDetails?.rating?.rate ?? 0.0)/5.0"
         rateInfoLabel.text = "Rs: \((selectedProductDetails?.price ?? 0.0)*80.0)"
     }
