@@ -1,0 +1,6 @@
+framework module Pods_ProductsInfoApp_ProductsInfoAppUITests {
+  umbrella header "Pods-ProductsInfoApp-ProductsInfoAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
