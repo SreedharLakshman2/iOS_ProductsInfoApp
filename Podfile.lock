@@ -1,20 +1,16 @@
 PODS:
-  - Cosmos (23.0.0)
   - SideMenu (6.5.0)
 
 DEPENDENCIES:
-  - Cosmos (~> 23.0)
   - SideMenu
 
 SPEC REPOS:
   trunk:
-    - Cosmos
     - SideMenu
 
 SPEC CHECKSUMS:
-  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: 8f896d5bf30aa9d5e6dc089765e24419b14ad2c9
+PODFILE CHECKSUM: f177499e9522395d920a2d608faab292f3a58991
 
 COCOAPODS: 1.11.3

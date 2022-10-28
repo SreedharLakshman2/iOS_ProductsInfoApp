@@ -6,7 +6,6 @@ target 'ProductsInfoApp' do
   use_frameworks!
 
   # Pods for ProductsInfoApp
-pod 'Cosmos', '~> 23.0'
 pod 'SideMenu'
   target 'ProductsInfoAppTests' do
     inherit! :search_paths
