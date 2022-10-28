@@ -4,7 +4,7 @@
 target 'ProductsInfoApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+ pod 'SideMenu'
   # Pods for ProductsInfoApp
   target 'ProductsInfoAppTests' do
     inherit! :search_paths
